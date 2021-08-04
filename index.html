@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Book Store Service</title>
+		<meta charset="utf-8">
+		<!--Webix sources-->
+		<!-- local links
+		<script type="text/javascript" src="codebase/webix.js"></script>
+		<link rel="stylesheet" type="text/css" href="codebase/webix.css" charset="utf-8">
+		-->
+
+		<script type="text/javascript" src="//cdn.webix.com/site/webix.js"></script>
+		<link rel="stylesheet" type="text/css" href="//cdn.webix.com/site/webix.css">
+		<link rel="stylesheet" type="text/css" href="//cdn.webix.com/materialdesignicons/5.8.95/css/materialdesignicons.min.css"  charset="utf-8">
+
+		<!--App sources -->
+		<script type="text/javascript" src="js/toolbar.js"></script>
+		<script type="text/javascript" src="js/trade_list.js"></script>
+		<script type="text/javascript" src="js/order_description.js"></script>
+		<script type="text/javascript" src="js/order_form.js"></script>
+		<script type="text/javascript" src="js/user_form.js"></script>
+		<script type="text/javascript" src="js/payment_form.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/index.css" charset="utf-8">
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			webix.ready(function(){
+
+				webix.ui({
+					rows:[
+						toolbar,
+						{
+							type:"wide",
+							cols:[
+								{},
+								{
+									cells:[
+										trade_list,
+										{
+											id:"order_section", type:"clean",
+											cols:[
+												order_description,
+												{
+													id:"form_multiview", animate:{ type:"slide", direction:"top" },
+													cells:[
+														order_form,
+														user_form,
+														payment_form
+													]
+												}
+											]
+										}
+									]
+								},
+								{}
+							]
+						}
+					]
+				});
+
+			});
+
+			</script>
+	</body>
+</html>
